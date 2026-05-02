@@ -46,7 +46,7 @@ app.MapGet("/home", (HttpContext context) =>
     if (user?.Identity?.IsAuthenticated == true)
         return user.Identity.Name;
     else
-        return "Not authenticated";
+        return "Not authenticated!";
 })
     .RequireAuthorization("onlyadmin");
 
