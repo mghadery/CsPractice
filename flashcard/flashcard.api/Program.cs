@@ -46,7 +46,7 @@ app.MapGet("/home", (HttpContext context) =>
     if (user?.Identity?.IsAuthenticated == true)
         return user.Identity.Name;
     else
-        return "Not authenticated";
+        return "Not authenticated!";
 })
     .RequireAuthorization("onlyadmin");
 
@@ -54,5 +54,5 @@ app.Run();
 
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
-	public int TemperatureF => 32 + (int)(TemperatureC / 0.557);
+    public int TemperatureF => 32 + (int)(TemperatureC / 0.556);
 }
